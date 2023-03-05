@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aplikasi Program Kalkulator</title>
+	<script language="javascript">
+		//<!-
+		function hitung() {
+			var bil1 = Number(document.getElementById("bil1").value);
+			var bil2 = Number(document.getElementById("bil2").value);
+			var operator = document.querySelector('input[name="operator"]:checked').value;
+			var hasil;
+			if (operator == "+") {
+				hasil = bil1 + bil2;
+			} else if (operator == "-") {
+				hasil = bil1 - bil2;
+			} else if (operator == "x") {
+				hasil = bil1 * bil2;
+			} else if (operator == "/") {
+				hasil = bil1 / bil2;
+			}
+			document.getElementById("hasil").value = hasil;
+		}
+		//->
+	</script>
+</head>
+<body>
+	<h1>Kalkulator Sederhana</h1>
+	<label for="bil1">Bilangan 1:</label>
+	<input id="bil1">
+	<br><br>
+	<label for="bil2">Bilangan 2:</label>
+	<input id="bil2">
+	<br><br>
+	<label for="operator">Operator:</label>
+	<input type="radio" name="operator" value="+"> +
+	<input type="radio" name="operator" value="-"> -
+	<input type="radio" name="operator" value="x"> x
+	<input type="radio" name="operator" value="/"> /
+	<br><br>
+	<button onclick="hitung()">Hitung</button>
+	<br><br>
+	<label for="hasil">Hasil:</label>
+	<input id="hasil" disabled>
+</body>
+</html>
